@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>{{ title }} - BLOGMON</title>
+    {% else %}
+        <title>BLOGMON</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <div class="navbar-title">
+                    <a href="#" class="navbar-link">BLOGMON</a>
+                </div>
+                <div class="navbar-right">
+                    <a href="#" class="navbar-link">Write</a>
+                    <a href="#" class="navbar-link">Sign In</a>
+                    <a id="bold-button-blue" href="#" class="navbar-link">Get Started</a>
+                </div>
+            </div>
+        </header>        
+        <div class="line"></div>
+        <main>
+            <div class="main-content">
+                <span>Fck it</span><br>
+                <span>we ball</span>
+                <p>Cheers for stopping by! Our blog is like a well-written algorithm: full of unexpected twists and just the right amount of bugs!</p>
+                <a id="bold-button-green" href="#">Start Reading</a>
+            </div>
+        </main>
+        <div class="line"></div>
+        <footer>
+            <div class="footerr">
+                <a href="#" class="footerr-link">Help</a>
+                <a href="#" class="footerr-link">About</a>
+                <a href="#" class="footerr-link">Privacy</a>
+                <a href="#" class="footerr-link">Terms</a>
+                <a href="#" class="footerr-link">Team</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

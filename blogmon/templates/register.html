@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>REGISTER</h1>
+
+    
+
+    <form method="POST">
+        {{ form.hidden_tag() }}  <!-- Include CSRF token -->
+        <div>
+            {{ form.username.label }} {{ form.username() }} 
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.email.label }} {{ form.email() }}
+            {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.password.label }} {{ form.password() }}
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.confirm_password.label }} {{ form.confirm_password() }}
+            {% for error in form.confirm_password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        <button type="submit">{{ form.submit.label }}</button>
+    </form>
+    <div class="redirect">
+        <p>Already have an account? <a href="#">Sign In</a></p>
+    </div>
+{% endblock content %}

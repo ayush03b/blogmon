@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>{{ title }} - BLOGMON</title>
+    {% else %}
+        <title>BLOGMON</title>
+    {% endif %}    
+    {% if title == 'Register' or title == 'Login' %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='auth/auth.css') }}">
+    {% endif %}
+    {% if title == 'Profile' %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='profile.css') }}">
+    {% endif %}
+    {% if title == 'Feed' %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='feed.css') }}">
+    {% endif %}
+    {% if title == 'New Post' or title == 'Update Post' %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='create_post.css') }}">
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <div class="navbar-title">
+                    <a href="{{ url_for('main.feed')}}" class="navbar-link">BLOGMON</a>
+                </div>
+                <div class="navbar-right">
+                    <a href="{{ url_for('posts.create_post')}}" class="navbar-link">
+                        <i style="font-size:20px;" class="fa-regular fa-pen-to-square"></i>
+                        Write
+                    </a>
+                    {% if current_user.is_authenticated %}
+                        <a id="logout-button-style" href="{{ url_for('users.logout')}}" class="navbar-link">Logout</a>
+                        <a href="{{ url_for('users.profile')}}" class="navbar-link">
+                            <img src="{{ url_for('static', filename='profile_imgs/' + current_user.image_file) }}" alt="Profile" class="navbar-profile-pic">
+                        {{ current_user.username }}</a>
+                    {% else %}
+                        <a id="logout-button-style" href="{{ url_for('user.login')}}" class="navbar-link">Login</a>
+                        <a id="logout-button-style" href="{{ url_for('users.register')}}" class="navbar-link">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </header>        
+        <div class="line"></div>
+    </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="flash-message {{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
+    <div class="line"></div>
+    <footer>
+        <div class="footerr">
+            <a href="#" class="footerr-link">Help</a>
+            <a href="#" class="footerr-link">About</a>
+            <a href="#" class="footerr-link">Privacy</a>
+            <a href="#" class="footerr-link">Terms</a>
+            <a href="#" class="footerr-link">Team</a>
+        </div>
+    </footer>
+    
+</body>
+</html>

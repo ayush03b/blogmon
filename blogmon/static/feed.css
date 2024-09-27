@@ -1,0 +1,135 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    width:auto;
+}
+.blog-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1000px; /* Limit the width of the feed */
+    margin: 0 auto; /* Center the blog feed */
+    padding: 60px 20px 0; /* Add top padding equal to the navbar height, and side padding */
+}
+
+.blog-card {
+    background-color: white;
+    border-bottom: solid 1px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.blog-card a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+
+/* .blog-card:hover {
+    transform: translateY(-5px);
+} */
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author-name {
+    font-size: 14px;
+    color: black;
+}
+
+.blog-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-snippet {
+    font-size: 16px;
+    color: #666;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.blog-date {
+    font-size: 14px;
+    color: #999;
+}
+
+.blog-stats {
+    font-size: 14px;
+    color: #999;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+/* Pagination Styles */
+.pagination-container {
+    display: flex;
+    justify-content: center; /* Center pagination links */
+    align-items: center;
+    margin-top: 30px; /* Add some space between the blog feed and pagination */
+}
+
+.pagination-link {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #f7f7f7; /* Light grey background */
+    border: 1px solid #ddd; /* Light border */
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-link:hover {
+    background-color: #333; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.pagination-link.active {
+    background-color: #333; /* Active page background */
+    color: white; /* Active page text color */
+    border-color: #333; /* Darker border for active page */
+    cursor: default; /* Disable cursor on the active link */
+}
+
+.pagination-link.disabled {
+    background-color: #f7f7f7; /* Disabled background */
+    color: #ccc; /* Disabled text color */
+    border-color: #ddd; /* Border remains the same */
+    pointer-events: none; /* Disable interaction */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+    .pagination-link {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

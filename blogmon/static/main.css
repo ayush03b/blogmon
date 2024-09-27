@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    position: fixed; /* Change to fixed to stick to the top */
+    top: 0; /* Ensures it stays at the top of the page */
+    left: 0; /* Ensures it aligns to the left */
+    z-index: 999; /* Ensures the navbar stays above other content */
+    font-family: 'Times New Roman', Times, serif;
+    position: fixed; /* Or relative based on your layout */
+    z-index: 100; /* Ensure this is lower than flash message */
+    width: 100%;
+}
+
+.navbar-right {
+    display: flex; 
+    justify-content: flex-end; 
+    margin-right: 60px;
+    align-items: center;
+}
+.navbar-right a:hover{
+    text-decoration:underline;
+}
+.navbar-title {
+    justify-content: flex-start;
+    font-family:'Press Start 2P', cursive;
+    text-shadow: 2px 2px #ff00ff; 
+    flex: 1; 
+    margin-left: 40px;
+}
+
+.navbar-title a {
+    font-size: 38px;
+    color: #87CEEB;
+}
+/* #87CEEB */
+.navbar-title a:hover {
+    color: #ff00ff; 
+    text-shadow: 2px 2px #00ff00; 
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    color: black; 
+    text-decoration: none;
+    margin: 0 24px; 
+    font-size: 14px; 
+    transition: color 0.3s, text-shadow 0.3s; 
+}
+
+.line {
+    height: 1px; 
+    width: 100%; 
+    color: black;
+    background-color: black; 
+    margin-top: 80px;    
+}
+#bold-button-black{
+    background-color: black;
+    border-radius: 1386px;
+    box-shadow: none;
+    color: white;
+    padding: 15px;
+}
+#bold-button-green{
+    background-color: #006400;
+    text-decoration: none;
+    border-radius: 1386px;
+    color: white;
+    padding: 15px;
+}
+.flash-message {
+    position:inherit; /* or 'absolute' based on your layout */
+    z-index: 1000; /* Ensure this is higher than your navbar */
+    background-color: #f8d7da; /* Optional: Add a background color */
+    color: #721c24; /* Text color for error messages */
+    padding: 10px; /* Add some padding */
+    margin: 20px; /* Add margin to space it from other elements */
+    border: 1px solid #f5c6cb; /* Optional: Border color */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.flash-message.success {
+    background-color: #dff0d8; /* Light green background */
+    color: #3c763d; /* Dark green text */
+    border: 1px solid #d6e9c6; /* Border to match the background */
+}
+
+.flash-message.danger {
+    background-color: #f2dede; /* Light red background */
+    color: #a94442; /* Dark red text */
+    border: 1px solid #ebccd1; /* Border to match the background */
+}
+
+.flash-message.info {
+    background-color: #d9edf7; /* Light blue background */
+    color: #31708f; /* Dark blue text */
+    border: 1px solid #bce8f1; /* Border to match the background */
+}
+
+.flash-message.warning {
+    background-color: #fcf8e3; /* Light yellow background */
+    color: #8a6d3b; /* Dark yellow text */
+    border: 1px solid #faebcc; /* Border to match the background */
+}
+#logout-button-style{
+    border-radius: 1386px;
+    border: solid black 1px;
+    box-shadow: none;
+    color: black;
+    padding: 15px;
+}
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default left padding */
+}
+
+.flash-message {
+    display: block; /* Ensure that the message spans the full width */
+    margin: 0 auto; /* Center the flash message */
+    text-align: center;
+}
+.footerr {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 25px 0;
+    background-color: white; /* Set a background color */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+main {
+    flex-grow: 1; /* Allow main to take up available space */
+}
+
+.footerr-link {
+    color: black; 
+    text-decoration: none;
+    margin: 0 15px; 
+    font-size: 14px; 
+    transition: color 0.3s, text-shadow 0.3s; 
+}
+.footerr-link:hover{
+    text-decoration:underline;
+}
+html, body {
+    height: 100%; /* Ensure the html and body take the full height */
+    margin: 0; /* Remove default margin */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    
+}
+
+.navbar-profile-pic {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Ensure it's square */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensures the image is not distorted */
+    border: 2px solid white; /* Optional: Add a border around the profile picture */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar-profile-pic:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
