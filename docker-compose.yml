@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    volumes:
+      - .:/app
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
+      SQLALCHEMY_TRACK_MODIFICATIONS: ${SQLALCHEMY_TRACK_MODIFICATIONS}
+      MAIL_SERVER: ${MAIL_SERVER}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USE_TLS: ${MAIL_USE_TLS}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_USE_SSL: ${MAIL_USE_SSL}

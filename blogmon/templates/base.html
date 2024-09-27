@@ -41,7 +41,7 @@
                             <img src="{{ url_for('static', filename='profile_imgs/' + current_user.image_file) }}" alt="Profile" class="navbar-profile-pic">
                         {{ current_user.username }}</a>
                     {% else %}
-                        <a id="logout-button-style" href="{{ url_for('user.login')}}" class="navbar-link">Login</a>
+                        <a id="logout-button-style" href="{{ url_for('users.login')}}" class="navbar-link">Login</a>
                         <a id="logout-button-style" href="{{ url_for('users.register')}}" class="navbar-link">Register</a>
                     {% endif %}
                 </div>
