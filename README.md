@@ -8,14 +8,11 @@ To get the application up and running:
 ```bash
 git clone https://github.com/ayusxhhb/blogmon.git
 cd blogmon
-chmod +x setup.sh
-
-
-### setup the env variables
-```bash
-./setup.sh
 
 ### run using docker
 ```bash
 docker-compose up --build
 
+### run the app by pasting this in the browser 
+```bash
+localhost:5001
