@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="reset-container">
+    <h1 class="reset-title">Reset Password</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="reset-form-group">
+            {{ form.email.label() }}
+            {{ form.email() }}
+        </div>
+        <div class="reset-form-submit">
+            {{ form.submit(class="reset-btn-submit") }}
+            <a class="reset-link" href="{{ url_for('users.login') }}">
+                Back to Login
+            </a>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* General Styles */
+    body {
+        background-color: #f7fafc;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin: 0;
+    }
+    .reset-container {
+        background-color: white;
+        padding: 82px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin-top: 100px;
+        margin-right: 130px;
+    }
+    .reset-title {
+        font-size: 34px;
+        font-weight: bold;
+        margin-bottom: 24px;
+        text-align: center;
+        color: #2d3748;
+    }
+    .reset-form-group {
+        margin-bottom: 16px;
+    }
+    .reset-form-group label {
+        display: block;
+        color: #4a5568;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    .reset-form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        color: #4a5568;
+        font-size: 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
+    .reset-form-group input:focus {
+        border-color: #63b3ed;
+        box-shadow: 0 0 5px green;
+    }
+    .reset-form-submit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .reset-btn-submit {
+        background-color: #4299e1;
+        color: white;
+        font-weight: bold;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .reset-btn-submit:hover {
+        background-color: #2b6cb0;
+    }
+    .reset-btn-submit:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(66, 153, 225, 0.5);
+    }
+    .reset-link {
+        font-weight: bold;
+        font-size: 14px;
+        color: #4299e1;
+        text-decoration: none;
+    }
+    .reset-link:hover {
+        color: #2b6cb0;
+    }
+</style>
+{% endblock content %}
+

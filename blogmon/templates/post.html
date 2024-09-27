@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="post-view-container">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <div class="post-meta">
+        {% if post.author == current_user %}
+            <span class="post-author">By <a href="{{ url_for('users.profile') }}">{{ post.author.username }}</a></span>
+        {% else %}
+            <span class="post-author">By <a href="{{ url_for('users.user_profile', username=post.author.username) }}">{{ post.author.username }}</a></span>
+        {% endif %}
+        <span class="post-date">{{ post.date_posted.strftime('%B %d, %Y') }}</span>
+    </div>
+    <div class="post-content">
+        {{ post.content | e }}  <!-- Use 'safe' to render HTML content -->
+    </div>
+    <div class="post-footer">
+        <a href="{{ url_for('main.feed') }}" class="back-button">Back to Feed</a>
+        {% if post.author == current_user %}
+            <a href="{{ url_for('posts.update_post', post_id=post.id) }}" class="back-button">Update Post</a>
+            <a href="{{ url_for('posts.delete_post', post_id=post.id) }}" class="back-button">Delete Post</a>
+        {% endif %}
+
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f4f4f4;  /* Light gray background */
+        font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .post-view-container {
+        max-width: 1200px;  /* Center the content */
+        margin: 160px auto;
+        background: white;  /* White background for the post */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 40px; /* Side and bottom padding */
+        padding-top: 10px; /* Top padding to avoid overlap with navbar */
+    }
+
+    .post-title {
+        font-size: 3.5em; /* Large title */
+        margin-bottom: 10px;
+        color: #333; /* Dark gray color for the title */
+    }
+
+    .post-meta {
+        font-size: 0.9em; /* Smaller font for meta info */
+        color: #666; /* Medium gray for meta info */
+        margin-bottom: 20px;
+    }
+
+    .post-content {
+        font-size: 1.2em; /* Slightly larger font for the post content */
+        line-height: 1.6; /* Increased line height for readability */
+        color: #444; /* Dark gray for post content */
+    }
+
+    .post-footer {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 30px; /* Space above the footer */
+        text-align: center; /* Centered text */
+    }
+
+    .back-button {
+        display: inline-block; /* Make the link look like a button */
+        padding: 10px 20px; /* Padding for the button */
+        background-color: #006400; /* Bootstrap primary color */
+        color: white; /* White text */
+        border-radius: 5px; /* Rounded corners */
+        text-decoration: none; /* No underline */
+        transition: background-color 0.3s; /* Smooth transition */
+    }
+
+    .back-button:hover {
+        background-color: black; /* Darker blue on hover */
+    }
+    .post-author a{
+        text-decoration: none;
+        color: green;
+        font-weight: bolder;
+        font-size: 28px;
+    }
+</style>
+
+{% endblock content %}

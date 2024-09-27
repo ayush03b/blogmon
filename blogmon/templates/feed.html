@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="blog-feed">
+        {% for post in posts.items %}
+            <div class="blog-card">
+                <a href="{{ url_for('posts.post', post_id=post.id)}}">
+                    <div class="blog-meta">
+                        <img class="author-avatar" src="{{ url_for('static', filename='profile_imgs/'+ post.author.image_file) }}" alt="{{ post.author }}'s profile picture">
+                        <span class="author-name">{{ post.author.username }}</span>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">{{ post.title }}</h2>
+                        <hr>
+                        <p class="blog-snippet">{{ post.content[:500] }}...</p>
+                    </div>
+                    <div class="blog-footer">
+                        <span class="blog-date">{{ post.date_posted.strftime('%Y-%m-%d') }}</span>
+                        <span class="blog-stats">{{ post.views }} views | {{ post.comments }} comments</span>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="pagination-container">
+        {% if posts.has_prev %}
+            <a href="{{ url_for('main.feed', page=posts.prev_num) }}" class="pagination-link">&laquo; Prev</a>
+        {% else %}
+            <span class="pagination-link disabled">&laquo; Prev</span>
+        {% endif %}
+    
+        {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=2, right_current=2) %}
+            {% if page_num %}
+                <a href="{{ url_for('main.feed', page=page_num) }}" class="pagination-link {% if page_num == posts.page %}active{% endif %}">
+                    {{ page_num }}
+                </a>
+            {% else %}
+                <span class="pagination-link disabled">...</span>
+            {% endif %}
+        {% endfor %}
+    
+        {% if posts.has_next %}
+            <a href="{{ url_for('main.feed', page=posts.next_num) }}" class="pagination-link">Next &raquo;</a>
+        {% else %}
+            <span class="pagination-link disabled">Next &raquo;</span>
+        {% endif %}
+    </div>
+    
+{% endblock content %}

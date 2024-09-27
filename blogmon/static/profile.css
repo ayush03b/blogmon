@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.profile-header {
+    background-color: #87CEEB;
+    height: 140px;
+    padding-top: 100px; /* Adjust value to the height of your navbar */
+}
+.profile-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: -70px auto 20px;
+    position: relative;
+    overflow: visible;
+}
+.edit-profile {
+    background-color: #5865f2; /* Customize your button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 25%;
+    text-align:center;
+    font-size: 14px;
+    border-radius: 8px 0 8px 0;
+}
+.edit-profile:hover {
+    background-color: #4752c4; /* Darker shade on hover */
+}
+.profile-content {
+    padding: 20px;
+    text-align: center;
+}
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid white;
+}
+
+.username {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.join-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+.join-info a{
+    text-decoration: none;
+}
+.join-info span{
+    color: black;
+}
+.main-content {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+}
+.sidebar {
+    width: 25%;
+}
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.badge {
+    width: 50px;
+    height: 50px;
+}
+.post {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post a{
+    text-decoration: none;
+    color: black;
+}
+.pinned {
+    border: 1px solid #5865f2;
+}
+.pinned-badge {
+    background-color: #5865f2;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.post-info {
+    font-size: 14px;
+}
+.post-title {
+    font-size: 18px;
+    margin: 5px 0;
+}
+.tags {
+    margin: 5px 0;
+}
+.tag {
+    color: black;
+    margin-right: 5px;
+    font-size: 14px;
+}
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px;
+}
+.reactions, .comments {
+    color: black;
+}
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #f4f4f9;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: calc(100% - 40px); /* Adjust width to account for padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow: hidden; /* Prevents child elements from overflowing */
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: #333;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Modal Header and Close Button */
+.modal-content h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Form Inputs and Labels */
+.modal-content label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%; /* Full width but respecting padding */
+    box-sizing: border-box; /* Padding and border included in width */
+}
+
+/* File Upload Button */
+.custom-file-upload {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width but respecting padding */
+    box-sizing: border-box; /* Padding and border included in width */
+}
+
+.custom-file-upload:hover {
+    background-color: #005bb5;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; /* Hide the actual file input */
+}
+
+/* Image Preview Box */
+.image-preview {
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+    min-height: 120px; /* Ensure space for preview image */
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.image-preview p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Update Button */
+.modal-content .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensures the button doesn't overflow */
+}
+
+.modal-content .btn:hover {
+    background-color: #218838;
+}
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* More width on smaller screens */
+        padding: 10px; /* Less padding on smaller screens */
+    }
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.pagination-link {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #f7f7f7; /* Light grey background */
+    border: 1px solid #ddd; /* Light border */
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination-link:hover {
+    background-color: #333; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.pagination-link.active {
+    background-color: #333; /* Active page background */
+    color: white; /* Active page text color */
+    border-color: #333; /* Darker border for active page */
+    cursor: default; /* Disable cursor on the active link */
+}
+
+.pagination-link.disabled {
+    background-color: #f7f7f7; /* Disabled background */
+    color: #ccc; /* Disabled text color */
+    border-color: #ddd; /* Border remains the same */
+    pointer-events: none; /* Disable interaction */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 600px) {
+    .pagination-link {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+.content-wrapper {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+.posts-section {
+    width: 100%;
+}
+

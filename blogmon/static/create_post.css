@@ -1,0 +1,101 @@
+/* Ensure the body and html take up full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container to hold form and editor */
+.post-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+
+/* Title Input Styling */
+.form-input-title {
+    font-size: 36px;
+    font-weight: 700;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    outline: none;
+    font-family: 'Georgia', serif;
+}
+
+.form-input-title:focus {
+    border-bottom: 2px solid #000;
+}
+
+/* Quill Editor Styling */
+.quill-editor {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Make the Quill editor full height and remove borders */
+.quill-editor .ql-container {
+    flex-grow: 1;
+    border: none;
+}
+
+.quill-editor .ql-toolbar {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style the editor content area */
+.quill-editor .ql-editor {
+    padding-top: 30px; /* Add some top padding to position the cursor when empty */
+}
+
+/* Submit button styling */
+.submit-button {
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #444;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    .post-container {
+        padding: 10px;
+    }
+
+    .form-input-title {
+        font-size: 24px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+}
