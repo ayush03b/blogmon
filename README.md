@@ -4,7 +4,6 @@
 
 To get the application up and running:
 
-### clone the repository
 ```bash
 git clone https://github.com/ayusxhhb/blogmon.git
 cd blogmon
