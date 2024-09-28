@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <span>404</span><br>
+    <h1>Oops. Page Not Found (404)</h1>
+    <p>Page does not exist. Please try a different location</p>
+    <a id="bold-button-green" href="{{ url_for('main.feed') }}">Start Reading</a>
+</div>
+<style>
+    main {
+        flex: 1;
+        display: flex; /* Add this to enable flexbox layout */
+        justify-content:center; /* Space between left and right content */
+        align-items: center;
+        font-family: 'Times New Roman', Times, serif;
+        padding-top: 20px;
+    }
+    .main-content {
+        letter-spacing: 2px;
+        text-align: center;
+    }
+      
+    .main-content span {
+        font-size: 150px;
+        line-height: 100px;
+        font-weight: bold;
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .main-content h1{
+        margin-top: 30px;
+    }
+    .main-content p{
+        margin-bottom: 50px;
+    }
+</style>
+{% endblock content %}

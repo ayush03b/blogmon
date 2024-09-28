@@ -19,4 +19,4 @@ ENV FLASK_ENV=development
 EXPOSE 5000
 
 # Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "run:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--reload", "run:app"]
