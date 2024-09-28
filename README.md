@@ -17,8 +17,11 @@ localhost:5001
 
 ## if you don't have docker 
 ```bash
-### install virtual env
+### install virtualenv on mac
 brew install virtualenv
+
+### install virtualenv on windows 
+nah man just shoot yourself in the leg
 
 ### go to terminal and paste this
 virtualenv .venv -p python3
