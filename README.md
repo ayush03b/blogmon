@@ -1,5 +1,5 @@
 # Blogmon Project
-
+hosted site : `http://52.66.200.228/`
 ## Quick Start
 
 To get the application up and running:
