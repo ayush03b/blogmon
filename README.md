@@ -8,8 +8,6 @@ To get the application up and running:
 git clone https://github.com/ayusxhhb/blogmon.git
 cd blogmon
 
-## if you don't have docker 
-```bash
 ### install virtualenv on mac
 brew install virtualenv
 
