@@ -8,13 +8,6 @@ To get the application up and running:
 git clone https://github.com/ayusxhhb/blogmon.git
 cd blogmon
 
-### run using docker
-docker-compose up --build
-
-### run the app by pasting this in the browser 
-localhost:5001
-```
-
 ## if you don't have docker 
 ```bash
 ### install virtualenv on mac
