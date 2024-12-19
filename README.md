@@ -1,5 +1,5 @@
 # Blogmon Project
-hosted site : `http://52.66.200.228/`
+hosted site : `http://52.66.200.228/`(NOT ANYMORE -_-)
 ## Quick Start
 
 To get the application up and running:
